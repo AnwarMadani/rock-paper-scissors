@@ -14,10 +14,7 @@ scissorsBtn.addEventListener("click", () => playRound('scissors', getComputerCho
 
 
     function playRound(humanChoice, computerChoice){
-        if((humanScore >= 5) || (computerScore >= 5)){
-            humanScore = 0;
-            computerScore = 0;
-        }
+        
         round.innerHTML = '';
 
         const yourChoice = document.createElement('h3');
@@ -56,6 +53,11 @@ scissorsBtn.addEventListener("click", () => playRound('scissors', getComputerCho
             winner.style.color = 'red';
             winner.textContent = 'You won the game!'
             round.appendChild(winner);
+        }
+
+        if((humanScore >= 5) || (computerScore >= 5)){
+            humanScore = 0;
+            computerScore = 0;
         }
         humanScoreHolder.textContent = humanScore;
         computerScoreHolder.textContent = computerScore;
